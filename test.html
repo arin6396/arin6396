@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video dengan Suara</title>
+    <style>
+        /* Gaya tampilan */
+        #textToConvert {
+            width: 100%;
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Video dengan Suara</h1>
+    <textarea id="textToConvert" placeholder="Masukkan teks untuk diubah menjadi suara..."></textarea>
+    <button onclick="convertToSpeech()">Putar Suara</button>
+
+    <script>
+        function convertToSpeech() {
+            const text = document.getElementById("textToConvert").value;
+            const utterance = new SpeechSynthesisUtterance(text);
+            speechSynthesis.speak(utterance);
+        }
+    </script>
+</body>
+</html>
+
